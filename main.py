@@ -14,7 +14,7 @@ def toggle_task(task_info):
         task_info['done'] = True
 
 
-def add_task():
+def add_task(event = None):
     task = entry.get().strip()
     if task:
         tasks.append(task)
@@ -53,6 +53,8 @@ entry.focus()
 
 entry.grid(row = 0, column = 0)
 button.grid(row = 0, column = 1, padx = 5)
+
+entry.bind("<Return>", add_task)
 
 
 root.mainloop()
